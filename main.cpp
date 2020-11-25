@@ -46,7 +46,7 @@ int main() {
             case 2:{
                 double max_area;
                 cin >> max_area;
-                size_t ans = std::count_if(vec.begin(), vec.end(), [max_area](Trapeze<int> &trp) {
+                size_t ans = count_if(vec.begin(), vec.end(), [max_area](Trapeze<int> &trp) {
                     return trp.area() < max_area;
                 });
                 cout << "Count of objects less than " << max_area << " area is " << ans << endl;
@@ -92,11 +92,11 @@ int main() {
                 try {
                     auto it = next(vec.begin(), index);
                     vec.erase(it);
-                } catch (std::exception &e) {
+                } catch (exception &e) {
                     cout << e.what() << endl;
                     break;
                 }
-                std::cout << "Figure successfully erased!" << endl;
+                cout << "Figure successfully erased!" << endl;
             }
             break;
             default:{
